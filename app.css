@@ -1,0 +1,122 @@
+/* importing inter font from fonts.google.com */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+/* default body styles */
+body {
+  margin: 0%;
+  padding: 0%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+
+  /* adding imported font */
+  font-family: "Inter", sans-serif !important;
+}
+
+/* variables */
+:root {
+  --grey-50: #656266;
+  --grey-100: #616161;
+  --grey-200: #322f33;
+  --grey-300: #1c181d;
+  --light: #e3e3e3;
+  --mid: #616161;
+  --dark: #475467;
+  --s50: #ebebeb;
+  --s100: #000000/7%;
+  --s200: #FFFFFF/20%;
+}
+
+/* navbar */
+nav.navbar {
+  background-color: var(--grey-300);
+  /* width: 100vw; */
+  padding: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.form_wrap {
+  position: relative;
+  width: 100%;
+}
+
+.form-control {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  border-radius: 10px;
+  transition: 0.2s ease-in;
+  border: none;
+  box-shadow: 0px 0px 0px 1px var(--grey-100);
+  background-color: var(--grey-200);
+  outline: none;
+  padding-left: 30px;
+  color: var(--light);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.form-control:hover {
+  box-shadow: 0px 0px 0px 1px var(--light);
+}
+
+.form-control:active {
+  box-shadow: 0px 0px 0px 2px var(--light);
+}
+
+.form-control:focus {
+  box-shadow: 0px 0px 0px 2px var(--light);
+}
+
+.search_ico {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 30px;
+}
+
+.search_ico path {
+  fill: var(--grey-100);
+}
+
+.notification_profile_btn_wrap {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.btn {
+  background-color: var(--grey-200);
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+.btn path {
+  fill: var(--grey-100);
+}
+
+/* responsive design */
+/* desktop */
+.lg_brand {
+  display: block;
+}
+
+.sm_brand {
+  display: none;
+}
+
+/* mobile */
+@media screen and (max-width: 600px) {
+  .sm_brand {
+    display: block;
+  }
+
+  .lg_brand {
+    display: none;
+  }
+}
