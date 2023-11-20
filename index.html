@@ -31,6 +31,7 @@
         </a>
       </div>
 
+      <!-- search input -->
       <form action="#" class="form_wrap">
         <div class="search_ico">
           <svg
@@ -51,11 +52,12 @@
         <input type="text" class="form-control" placeholder="Search" />
       </form>
 
+      <!-- profile & notifaction buttons -->
       <div class="notification_profile_btn_wrap">
-        <button class="btn">
+        <button class="btn" id="notifactionBtn">
           <svg
-            width="20"
-            height="20"
+            width="25"
+            height="25"
             viewBox="0 0 21 20"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -68,10 +70,264 @@
             />
           </svg>
         </button>
+
+        <button class="btn_profile" id="profileBtn">
+          <div class="profile_wrap">
+            <div class="name_wrap">Davil Collections</div>
+            <div class="btn_name">DC</div>
+          </div>
+        </button>
+      </div>
+
+      <!-- alert dropdown -->
+      <div class="dropdown border p-5 d-none" id="notifaction_drop">
+        <div>
+          <div class="flex items-center">
+            <div class="text-dark text-lg font-medium mr-auto">Alerts</div>
+
+            <div class="flex items-center gap-10">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="Layer_1"
+                  data-name="Layer 1"
+                  viewBox="0 0 24 24"
+                  width="14"
+                  height="14"
+                >
+                  <path
+                    d="M24,3.5c0,.83-.67,1.5-1.5,1.5H1.5c-.83,0-1.5-.67-1.5-1.5s.67-1.5,1.5-1.5H22.5c.83,0,1.5,.67,1.5,1.5ZM14.5,20h-5c-.83,0-1.5,.67-1.5,1.5s.67,1.5,1.5,1.5h5c.83,0,1.5-.67,1.5-1.5s-.67-1.5-1.5-1.5Zm4-9H5.5c-.83,0-1.5,.67-1.5,1.5s.67,1.5,1.5,1.5h13c.83,0,1.5-.67,1.5-1.5s-.67-1.5-1.5-1.5Z"
+                  />
+                </svg>
+              </div>
+
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  version="1.1"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="16"
+                  height="16"
+                  x="0"
+                  y="0"
+                  viewBox="0 0 330 330"
+                  style="enable-background: new 0 0 512 512"
+                  xml:space="preserve"
+                  class=""
+                >
+                  <g>
+                    <path
+                      d="M165 0C74.019 0 0 74.019 0 165s74.019 165 165 165 165-74.019 165-165S255.981 0 165 0zm0 300c-74.44 0-135-60.561-135-135S90.56 30 165 30s135 60.561 135 135-60.561 135-135 135z"
+                      fill="#000000"
+                      opacity="1"
+                      data-original="#000000"
+                      class=""
+                    ></path>
+                    <path
+                      d="m226.872 106.664-84.854 84.853-38.89-38.891c-5.857-5.857-15.355-5.858-21.213-.001-5.858 5.858-5.858 15.355 0 21.213l49.496 49.498a15 15 0 0 0 10.606 4.394h.001c3.978 0 7.793-1.581 10.606-4.393l95.461-95.459c5.858-5.858 5.858-15.355 0-21.213-5.858-5.858-15.355-5.859-21.213-.001z"
+                      fill="#000000"
+                      opacity="1"
+                      data-original="#000000"
+                      class=""
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-5 p-5 bg-light">
+          <div class="font-bold text-md text-light">
+            Alerts about your store and account will show here
+          </div>
+        </div>
+      </div>
+
+      <!-- dropdow -->
+      <div class="dropdown border d-none" id="main_drop">
+        <div class="drop_wrap">
+          <a href="https://admin.shopify.com" class="prof_btn">
+            <button class="profile_drop_btn">
+              <div class="flex items-center">
+                <div class="name_profiler mr-auto flex items-center gap-5">
+                  <div class="btn_name">DC</div>
+                  <div class="font-medium text-md">Davil Collections</div>
+                </div>
+
+                <div class="check">
+                  <svg
+                    width="30"
+                    height="30"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="12" cy="12" r="10" fill="none"></circle>
+                    <path
+                      d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
+                      fill="#000000"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </button>
+          </a>
+
+          <a href="https://admin.shopify.com" class="prof_btn">
+            <div class="flex items-center mt-3">
+              <button class="drop_link flex items-center gap-5">
+                <div class="ico_wrap">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 21 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      fill="none"
+                      clip-rule="evenodd"
+                      d="M13.757 3H7.24302C6.85944 3 6.4971 3.17611 6.26012 3.47772L3.87394 6.51468C3.63169 6.823 3.5 7.20375 3.5 7.59586V8.25C3.5 9.31867 4.10958 10.245 5 10.7001V15.25C5 16.2165 5.7835 17 6.75 17H14.25C15.2165 17 16 16.2165 16 15.25V10.7001C16.8904 10.245 17.5 9.31867 17.5 8.25V7.76879C17.5 7.26465 17.3307 6.77511 17.0192 6.3787L14.7399 3.47772C14.5029 3.17611 14.1406 3 13.757 3ZM13.5 15.5H14.25C14.3881 15.5 14.5 15.3881 14.5 15.25V11C13.712 11 13.0014 10.6686 12.5 10.1375C11.9986 10.6686 11.288 11 10.5 11C9.71199 11 9.00138 10.6686 8.5 10.1375C7.99862 10.6686 7.28801 11 6.5 11V15.25C6.5 15.3881 6.61193 15.5 6.75 15.5H10.5V13C10.5 12.4477 10.9477 12 11.5 12H12.5C13.0523 12 13.5 12.4477 13.5 13V15.5ZM6.5 9.5H6.25C5.55964 9.5 5 8.94036 5 8.25V7.59586C5 7.53985 5.01881 7.48545 5.05342 7.44141L7.36453 4.5H13.6355L15.8397 7.30543C15.9436 7.43757 16 7.60075 16 7.76879V8.25C16 8.94036 15.4404 9.5 14.75 9.5H14.5C13.8096 9.5 13.25 8.94036 13.25 8.25V7.75C13.25 7.33579 12.9142 7 12.5 7C12.0858 7 11.75 7.33579 11.75 7.75V8.25C11.75 8.94036 11.1904 9.5 10.5 9.5C9.80964 9.5 9.25 8.94036 9.25 8.25V7.75C9.25 7.33579 8.91421 7 8.5 7C8.08579 7 7.75 7.33579 7.75 7.75V8.25C7.75 8.94036 7.19036 9.5 6.5 9.5Z"
+                      fill="#fff"
+                    />
+                  </svg>
+                </div>
+                <div class="text-md">All stores</div>
+              </button>
+            </div>
+          </a>
+        </div>
+        <div class="drop_wrap">
+          <a href="https://admin.shopify.com" class="prof_btn">
+            <button class="drop_link no_ico p-3">
+              <div class="text-md">Help Center</div>
+            </button>
+          </a>
+
+          <a href="https://admin.shopify.com" class="prof_btn">
+            <button class="drop_link no_ico p-3 mt-3">
+              <div class="text-md">Changelog</div>
+            </button>
+          </a>
+
+          <a href="https://admin.shopify.com" class="prof_btn">
+            <button class="drop_link no_ico p-3 mt-3">
+              <div class="text-md">Community forums</div>
+            </button>
+          </a>
+
+          <a href="https://admin.shopify.com" class="prof_btn">
+            <button class="drop_link no_ico p-3 mt-3">
+              <div class="text-md">Hire a Shopify Partner</div>
+            </button>
+          </a>
+
+          <a href="https://admin.shopify.com" class="prof_btn">
+            <button class="drop_link no_ico p-3 mt-3">
+              <div class="text-md">Keyboard shortcuts</div>
+            </button>
+          </a>
+        </div>
+
+        <div class="drop_wrap border-0">
+          <a href="https://admin.shopify.com" class="prof_btn">
+            <button class="drop_link no_ico p-3">
+              <div class="text-md">
+                <div class="font-medium text-dark text-lg">David Micheal</div>
+                <div class="text-sm text-gray">davidmicheal@gmail.com</div>
+              </div>
+            </button>
+          </a>
+
+          <a href="https://admin.shopify.com" class="prof_btn">
+            <button class="drop_link no_ico p-3 mt-3">
+              <div class="text-md">Manage account</div>
+            </button>
+          </a>
+
+          <a href="https://admin.shopify.com" class="prof_btn">
+            <button class="drop_link no_ico p-3 mt-3">
+              <div class="text-md">Log out</div>
+            </button>
+          </a>
+        </div>
       </div>
     </nav>
 
+    <!-- main -->
+    <main>
+      <div class="callout">
+        <div class="flex items-center">
+          <div class="callout_text text-md mr-auto text-white">
+            Extend your trial for $1/month for months on select plan.
+          </div>
+
+          <div class="flex gap-5 items-center">
+            <div>
+              <a href="https://shopify.com/pricing">
+                <button class="btn-white border">Select plan</button>
+              </a>
+            </div>
+            <div class="cursor_pointer close_ico">
+              <button class="btn_transparent" id="closeCalloutBtn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 21 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14.4697 15.0303C14.7626 15.3232 15.2374 15.3232 15.5303 15.0303C15.8232 14.7374 15.8232 14.2626 15.5303 13.9697L11.5607 10L15.5303 6.03033C15.8232 5.73744 15.8232 5.26256 15.5303 4.96967C15.2374 4.67678 14.7626 4.67678 14.4697 4.96967L10.5 8.93934L6.53033 4.96967C6.23744 4.67678 5.76256 4.67678 5.46967 4.96967C5.17678 5.26256 5.17678 5.73744 5.46967 6.03033L9.43934 10L5.46967 13.9697C5.17678 14.2626 5.17678 14.7374 5.46967 15.0303C5.76256 15.3232 6.23744 15.3232 6.53033 15.0303L10.5 11.0607L14.4697 15.0303Z"
+                    fill="#fff"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="setup_wrap border p-3 pt-5 bg-white mt-4 rounded">
+        <div class="setup_wrap_header">
+          <div class="flex items-center">
+            <div class="mr-auto">
+              <div class="text-dark font-bold text-lg">Setup guide</div>
+              <div class="text-md text-dark">
+                Use this personalized guide to get your store up and running
+              </div>
+            </div>
+
+            <div>
+              <button class="btn_transparent">
+                <svg width="25" height="25" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" fill="none" clip-rule="evenodd" d="M6.21967 8.46967C6.51256 8.17678 6.98744 8.17678 7.28033 8.46967L10.75 11.9393L14.2197 8.46967C14.5126 8.17678 14.9874 8.17678 15.2803 8.46967C15.5732 8.76256 15.5732 9.23744 15.2803 9.53033L11.2803 13.5303C10.9874 13.8232 10.5126 13.8232 10.2197 13.5303L6.21967 9.53033C5.92678 9.23744 5.92678 8.76256 6.21967 8.46967Z" fill="#fff"/>
+                  </svg>              
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="setup_wrap_content mt-5">
+          <div class="flex items-center gap-5">
+            <div class="text-sm">
+              1 / 5 completed
+            </div>
+            <div class="progress">
+              <div class="bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
     <!-- linking js file -->
+    <script
+      src="https://kit.fontawesome.com/db2c14f523.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="./app.js"></script>
   </body>
 </html>
