@@ -235,7 +235,7 @@
           <a href="https://admin.shopify.com" class="prof_btn">
             <button class="drop_link no_ico p-3">
               <div class="text-md">
-                <div class="font-medium text-dark text-lg">David Micheal</div>
+                <div class="text-dark text-md font-bold">David Micheal</div>
                 <div class="text-sm text-gray">davidmicheal@gmail.com</div>
               </div>
             </button>
@@ -301,10 +301,22 @@
             </div>
 
             <div>
-              <button class="btn_transparent">
-                <svg width="25" height="25" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" fill="none" clip-rule="evenodd" d="M6.21967 8.46967C6.51256 8.17678 6.98744 8.17678 7.28033 8.46967L10.75 11.9393L14.2197 8.46967C14.5126 8.17678 14.9874 8.17678 15.2803 8.46967C15.5732 8.76256 15.5732 9.23744 15.2803 9.53033L11.2803 13.5303C10.9874 13.8232 10.5126 13.8232 10.2197 13.5303L6.21967 9.53033C5.92678 9.23744 5.92678 8.76256 6.21967 8.46967Z" fill="#fff"/>
-                  </svg>              
+              <button class="btn_transparent" id="wrapper_btn">
+                <svg
+                  width="25"
+                  height="25"
+                  viewBox="0 0 21 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    fill="none"
+                    clip-rule="evenodd"
+                    d="M6.21967 8.46967C6.51256 8.17678 6.98744 8.17678 7.28033 8.46967L10.75 11.9393L14.2197 8.46967C14.5126 8.17678 14.9874 8.17678 15.2803 8.46967C15.5732 8.76256 15.5732 9.23744 15.2803 9.53033L11.2803 13.5303C10.9874 13.8232 10.5126 13.8232 10.2197 13.5303L6.21967 9.53033C5.92678 9.23744 5.92678 8.76256 6.21967 8.46967Z"
+                    fill="#fff"
+                  />
+                </svg>
               </button>
             </div>
           </div>
@@ -312,11 +324,303 @@
 
         <div class="setup_wrap_content mt-5">
           <div class="flex items-center gap-5">
-            <div class="text-sm">
-              1 / 5 completed
-            </div>
+            <div class="text-sm">1 / 5 completed</div>
             <div class="progress">
               <div class="bar"></div>
+            </div>
+          </div>
+
+          <div class="mt-5" id="wrapperContent">
+            <div class="step_main active rounded p-3">
+              <div class="flex">
+                <div class="mr-auto">
+                  <div class="flex gap-5">
+                    <div class="steps_ico">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="23"
+                        height="23"
+                        viewBox="0 0 32 32"
+                        fill="none"
+                      >
+                        <circle
+                          cx="16"
+                          cy="16"
+                          r="12"
+                          stroke="#00000075"
+                          stroke-width="2.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-dasharray="4 6"
+                        />
+                      </svg>
+                    </div>
+
+                    <div>
+                      <div class="text-dark cursor_pointer text-md font-bold">
+                        Customize your online store
+                      </div>
+
+                      <div class="mt-5 step_content">
+                        <div class="text-light text-md step_sub_text">
+                          Choose a theme and add your logo, colors, and images
+                          to reflect your brand.
+                          <a href="" class="step_link font-medium text-base">
+                            Learn more
+                          </a>
+                        </div>
+
+                        <div class="mt-5">
+                          <button class="btn-dark">Customize theme</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="step_img_cont">
+                  <img
+                    src="https://crushingit.tech/hackathon-assets/customise-store.png"
+                    alt="png image"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="step_main mt-3 rounded p-3">
+              <div class="flex">
+                <div class="mr-auto">
+                  <div class="flex gap-5">
+                    <div class="steps_ico">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="23"
+                        height="23"
+                        viewBox="0 0 32 32"
+                        fill="none"
+                      >
+                        <circle
+                          cx="16"
+                          cy="16"
+                          r="12"
+                          stroke="#00000075"
+                          stroke-width="2.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-dasharray="4 6"
+                        />
+                      </svg>
+                    </div>
+
+                    <div>
+                      <div class="text-dark cursor_pointer text-md font-bold">
+                        Add your first product
+                      </div>
+
+                      <div class="mt-5 step_content">
+                        <div class="text-light text-md step_sub_text">
+                          Write a description, add photos, and set pricing for
+                          the products you plan to sell.
+                          <br class="lg_hidden" />
+                          <a href="" class="step_link font-medium text-base">
+                            Learn more
+                          </a>
+                        </div>
+
+                        <div class="mt-5">
+                          <div class="flex gap-10">
+                            <button class="btn-dark">Add product</button>
+
+                            <button class="btn_transparent font-bold">
+                              Import product
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="step_img_cont">
+                  <img
+                    src="https://crushingit.tech/hackathon-assets/product.png"
+                    alt="png image"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="step_main mt-3 rounded p-3">
+              <div class="flex">
+                <div class="mr-auto">
+                  <div class="flex gap-5">
+                    <div class="steps_ico">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="23"
+                        height="23"
+                        viewBox="0 0 32 32"
+                        fill="none"
+                      >
+                        <circle
+                          cx="16"
+                          cy="16"
+                          r="12"
+                          stroke="#00000075"
+                          stroke-width="2.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-dasharray="4 6"
+                        />
+                      </svg>
+                    </div>
+
+                    <div>
+                      <div class="text-dark cursor_pointer text-md font-bold">
+                        Add your custome domain
+                      </div>
+
+                      <div class="mt-5 step_content">
+                        <div class="text-light text-md step_sub_text">
+                          Your current domain is 222219.myshopify.com but you
+                          can add a custom domain to help customers find your
+                          online store.<br class="lg_hidden" />
+                          <a href="" class="step_link font-medium text-base">
+                            Learn more
+                          </a>
+                        </div>
+
+                        <div class="mt-5">
+                          <button class="btn-dark">Add domain</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="step_img_cont">
+                  <img
+                    src="https://crushingit.tech/hackathon-assets/website.png"
+                    alt="png image"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="step_main mt-3 rounded p-3">
+              <div class="flex">
+                <div class="mr-auto">
+                  <div class="flex gap-5">
+                    <div class="steps_ico">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="23"
+                        height="23"
+                        viewBox="0 0 32 32"
+                        fill="none"
+                      >
+                        <circle
+                          cx="16"
+                          cy="16"
+                          r="12"
+                          stroke="#00000075"
+                          stroke-width="2.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-dasharray="4 6"
+                        />
+                      </svg>
+                    </div>
+
+                    <div>
+                      <div class="text-dark cursor_pointer text-md font-bold">
+                        Name your store
+                      </div>
+
+                      <div class="mt-5 step_content">
+                        <div class="text-light text-md step_sub_text">
+                          Your temporary store name is currently Davil
+                          collections. The store name appears in your domain and
+                          your online store.<br class="lg_hidden" />
+                          <a href="" class="step_link font-medium text-base">
+                            Learn more
+                          </a>
+                        </div>
+
+                        <div class="mt-5">
+                          <button class="btn-dark">Name store</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="step_img_cont">
+                  <img
+                    src="https://crushingit.tech/hackathon-assets/name-store.png"
+                    alt="png image"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="step_main mt-3 rounded p-3">
+              <div class="flex">
+                <div class="mr-auto">
+                  <div class="flex gap-5">
+                    <div class="steps_ico">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="23"
+                        height="23"
+                        viewBox="0 0 32 32"
+                        fill="none"
+                      >
+                        <circle
+                          cx="16"
+                          cy="16"
+                          r="12"
+                          stroke="#00000075"
+                          stroke-width="2.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-dasharray="4 6"
+                        />
+                      </svg>
+                    </div>
+
+                    <div>
+                      <div class="text-dark cursor_pointer text-md font-bold">
+                        Set up a payment provider
+                      </div>
+
+                      <div class="mt-5 step_content">
+                        <div class="text-light text-md step_sub_text">
+                          Choose a payment provider to start accepting payments.
+                          You'll need to create an account with the payment
+                          provider and set it up with your Shopify store.<br
+                            class="lg_hidden"
+                          />
+                          <a href="" class="step_link font-medium text-base">
+                            Learn more
+                          </a>
+                        </div>
+
+                        <div class="mt-5">
+                          <button class="btn-dark">Set up payment</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="step_img_cont">
+                  <img
+                    src="https://crushingit.tech/hackathon-assets/payment.png"
+                    alt="png image"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>

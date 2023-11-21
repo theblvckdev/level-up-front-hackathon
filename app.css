@@ -97,6 +97,10 @@ a {
   color: #00000075;
 }
 
+.text-base {
+  font-size: 15px;
+}
+
 .text-dark {
   color: #000000;
 }
@@ -250,6 +254,7 @@ a {
   border: none;
   border-radius: 8px;
   transition: .2s ease-in;
+  outline-offset: 2px;
 }
 
 .btn-white:hover {
@@ -257,7 +262,7 @@ a {
 }
 
 .btn-white:focus {
-  box-shadow: 0px 0px 0px 2px #005bd3;
+  outline: 2px solid #005bd3 !important;
 }
 
 .btn_profile {
@@ -297,10 +302,81 @@ a {
   opacity: 0.7;
 }
 
+.step_link {
+  color: #005bd3;
+}
+
+.btn-dark {
+  background-color: #404040;
+  padding: 10px 15px;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-weight: 400;
+  box-shadow: -1px -1px 0px 1px #000000 inset, 1px 1px 0px 1px #5f5e5e inset;
+  border-radius: 8px;
+  transition: .2s ease-in;
+  outline-offset: 1px;
+}
+
+.btn-dark:active {
+  box-shadow: -1px 1px 0px 2px #000000 inset;
+}
+
+.btn-dark:focus {
+  outline: 2px solid #005bd3 !important;
+}
+
+.active {
+  background-color: #F3F3F3;
+}
+
+.step_main img {
+  display: none;
+}
+
+.active img {
+  display: block;
+}
+
+.step_content {
+  display: none;
+}
+
+.active .step_content {
+  display: block;
+}
+
+.lg_hidden {
+  display: none;
+}
+
+.step_main .btn_transparent {
+  background-color: #E7E7E7;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: .2s ease-in;
+}
+
+#wrapper_btn {
+  background-color: transparent;
+  padding: 0px 2px;
+  border-radius: 6px;
+  transition: .2s ease-in;
+}
+
+#wrapper_btn:hover {
+  background-color: #E7E7E7;
+}
+
+.step_main .btn_transparent:focus {
+  box-shadow: 0px 0px 0px 2px #005bd3;
+  background-color: #FFFFFF;
+}
+
 /* main */
 main {
   padding: 30px 0px;
-  max-width: 700px;
+  max-width: 750px;
   margin: 0px auto;
 }
 
@@ -308,11 +384,11 @@ main {
   padding: 15px 20px;
   background-color: var(--grey-300);
   position: relative;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .rounded {
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .mt-4 {
@@ -456,5 +532,21 @@ button {
     flex-direction: column;
     align-items: start !important;
     gap: 1rem;
+  }
+
+  .setup_wrap.rounded {
+    border-radius: 0px;
+  }
+
+  .step_img_cont {
+    display: none;
+  }
+
+  .step_sub_text {
+    display: inline;
+  }
+
+  .lg_hidden {
+    display: block;
   }
 }
