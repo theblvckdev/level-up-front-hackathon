@@ -38,12 +38,12 @@ a {
 .navbar {
   background-color: var(--grey-300);
   position: relative;
-  width: 100vw;
+  width: 100%;
   box-sizing: border-box;
   padding: 15px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: .5rem;
+  gap: 0.5rem;
 }
 
 .dropdown {
@@ -54,7 +54,7 @@ a {
   margin: 10px;
   margin-right: 15px;
   width: 280px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   box-shadow: 2px 2px 5px #0000001c;
   border-radius: 8px;
 }
@@ -93,6 +93,10 @@ a {
   display: none;
 }
 
+.w-full {
+  width: 100%;
+}
+
 .text-gray {
   color: #00000075;
 }
@@ -117,10 +121,11 @@ a {
   width: 100%;
   padding: 8px;
   background-color: transparent;
-  transition: .2s ease-in;
+  transition: 0.2s ease-in;
   border: none;
-  outline: none;
-  border-radius: 8px;
+  outline: none !important;
+  outline-offset: 1px;
+  border-radius: 10px;
 }
 
 .drop_link.no_ico {
@@ -145,6 +150,10 @@ a {
   box-shadow: 0px 0px 0px 2px #005bd3;
 }
 
+.d-block {
+  display: block;
+}
+
 .profile_drop_btn {
   width: 100%;
   padding: 5px;
@@ -167,7 +176,7 @@ a {
 }
 
 .gap-5 {
-  gap: .5rem;
+  gap: 0.5rem;
 }
 
 .font-medium {
@@ -231,13 +240,13 @@ a {
 
 .btn {
   background-color: var(--grey-200);
-  height: 35px;
-  width: 35px;
+  height: 100%;
+  width: 40px;
   display: flex;
   justify-content: center;
   padding: 0;
   align-items: center;
-  border-radius: 5px;
+  border-radius: 10px;
   border: none;
   cursor: pointer;
 }
@@ -247,13 +256,13 @@ a {
 }
 
 .btn-white {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   padding: 10px 20px;
   cursor: pointer;
   font-weight: 600;
   border: none;
   border-radius: 8px;
-  transition: .2s ease-in;
+  transition: 0.2s ease-in;
   outline-offset: 2px;
 }
 
@@ -267,20 +276,20 @@ a {
 
 .btn_profile {
   background-color: var(--grey-200);
-  height: 35px;
+  height: fit-content;
   width: fit-content;
   display: flex;
   justify-content: center;
-  padding: 0 2px;
+  padding: 3px;
   align-items: center;
-  border-radius: 5px;
+  border-radius: 10px;
   border: none;
   cursor: pointer;
 }
 
 .btn_profile .profile_wrap {
   display: flex;
-  gap: 1rem;
+  gap: 0.3rem;
   align-items: center;
 }
 
@@ -292,9 +301,9 @@ a {
 }
 
 .btn_name {
-  padding: 8px;
+  padding: 10px;
   background-color: #36fba1;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 .btn path {
@@ -309,12 +318,12 @@ a {
 .btn-dark {
   background-color: #404040;
   padding: 10px 15px;
-  color: #FFFFFF;
+  color: #ffffff;
   cursor: pointer;
   font-weight: 400;
   box-shadow: -1px -1px 0px 1px #000000 inset, 1px 1px 0px 1px #5f5e5e inset;
   border-radius: 8px;
-  transition: .2s ease-in;
+  transition: 0.2s ease-in;
   outline-offset: 1px;
 }
 
@@ -327,7 +336,7 @@ a {
 }
 
 .active {
-  background-color: #F3F3F3;
+  background-color: #f3f3f3;
 }
 
 .step_main img {
@@ -351,26 +360,26 @@ a {
 }
 
 .step_main .btn_transparent {
-  background-color: #E7E7E7;
+  background-color: #e7e7e7;
   padding: 8px 15px;
   border-radius: 8px;
-  transition: .2s ease-in;
+  transition: 0.2s ease-in;
 }
 
 #wrapper_btn {
   background-color: transparent;
   padding: 0px 2px;
   border-radius: 6px;
-  transition: .2s ease-in;
+  transition: 0.2s ease-in;
 }
 
 #wrapper_btn:hover {
-  background-color: #E7E7E7;
+  background-color: #e7e7e7;
 }
 
 .step_main .btn_transparent:focus {
   box-shadow: 0px 0px 0px 2px #005bd3;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 /* main */
@@ -420,7 +429,7 @@ main {
   top: 0%;
   left: 0%;
   width: 20%;
-  transition: .2s ease-in;
+  transition: 0.2s ease-in;
   height: 100%;
   border-radius: 50px;
   background-color: #000000;
@@ -447,9 +456,14 @@ main {
 }
 
 button {
-  outline: none !important;
+  outline: none;
   border: none;
   cursor: pointer;
+  outline-offset: 1px;
+}
+
+button:focus {
+  outline: 2px solid #005bd3;
 }
 
 .border {
@@ -457,7 +471,7 @@ button {
 }
 
 .text-white {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 /* responsive design */
@@ -475,8 +489,43 @@ button {
   border: none;
 }
 
+.step_main_head {
+  height: fit-content;
+  width: fit-content;
+  padding: 8px;
+  transition: 0.2s ease-in;
+  border-radius: 10px;
+  outline: none !important;
+  background-color: transparent;
+  outline-offset: 1px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.step_main_head:focus {
+  outline: 2px solid #005bd3 !important;
+  background-color: transparent;
+}
+
+.steps_ico {
+  display: flex;
+  align-items: center;
+  height: fit-content;
+  padding: 7px 0px;
+}
+
 .bg-white {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 /* mobile */
