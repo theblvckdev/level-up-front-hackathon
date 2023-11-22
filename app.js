@@ -64,6 +64,7 @@ const stepsData = [
     buttonTextOne: "Customize theme",
     imageUrl: "https://crushingit.tech/hackathon-assets/customise-store.png",
     isCompleted: false,
+    widht: "20%"
   },
 
   {
@@ -75,6 +76,7 @@ const stepsData = [
     buttonTextTwo: "Import product",
     imageUrl: "https://crushingit.tech/hackathon-assets/product.png",
     isCompleted: false,
+    widht: "40%"
   },
 
   {
@@ -85,6 +87,7 @@ const stepsData = [
     buttonTextOne: "Add domain",
     imageUrl: "https://crushingit.tech/hackathon-assets/website.png",
     isCompleted: false,
+    widht: "60%"
   },
 
   {
@@ -95,6 +98,7 @@ const stepsData = [
     buttonTextOne: "Name store",
     imageUrl: "https://crushingit.tech/hackathon-assets/name-store.png",
     isCompleted: false,
+    widht: "80%"
   },
 
   {
@@ -105,11 +109,223 @@ const stepsData = [
     buttonTextOne: "Set up payment",
     imageUrl: "https://crushingit.tech/hackathon-assets/payment.png",
     isCompleted: false,
+    widht: "100%"
   },
 ];
 
 let currentStep = 1;
 const stepMain = document.querySelector(".step_main");
+
+const progressBar = document.querySelector('.bar')
+const counterEl = document.querySelector('#counter')
+let currentWidth = 0;
+let currentStepEl = 0
+counterEl.innerText = currentStepEl;
+// progressBar.style.width = `${currentWidth}%`
+
+function completeStep(id) {
+  if(stepsData[id - 1].isCompleted) {
+    stepsData[id - 1].isCompleted = false
+    wrapperContent.innerHTML = "";
+    stepsData.forEach((data) => {
+      const {
+        id,
+        title,
+        subText,
+        buttonTextOne,
+        buttonTextTwo,
+        imageUrl,
+        isCompleted,
+      } = data;
+  
+      return (wrapperContent.innerHTML += `<div class="step_main ${
+        currentStep === id ? "active" : ""
+      } rounded p-2_5 pb-4">
+        <div class="flex">
+          <div class="mr-auto w-2_5">
+            <div class="flex gap-3 items-stretch">
+              <div>
+                <button role="button" aria-lable="Step ${id} check button, press enter to mark step ${id} as completed" class="steps_ico check_btn p-0 cursor_pointer" onclick="completeStep(${id})">
+                  ${
+                    isCompleted
+                      ? `<svg width="27" height="27" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                  <path
+                    d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
+                    fill="#fff"
+                  ></path>
+                </svg>`
+                      : `<svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="27"
+                height="27"
+                viewBox="0 0 32 32"
+                fill="none"
+              >
+                <circle
+                  cx="16"
+                  cy="16"
+                  r="12"
+                  stroke="#00000075"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-dasharray="4 6"
+                />
+              </svg>`
+                  }
+                </button>
+              </div>
+    
+              <div>
+                <button onclick="setCurrentStep(${id})" class="text-dark step_main_head cursor_pointer text-lg font-bold">
+                  ${title}
+                </button>
+    
+                <div class="px-2_5">
+                  <div class="mt-3 step_content">
+                    <p class="text-light text-md font-medium">
+                      ${subText}
+                      <a href="" class="step_link font-bold text-lg">
+                        Learn more
+                      </a>
+                    </p>
+      
+                    <div class="mt-4">
+                      <div class="flex gap-6">
+                        <button class="btn-dark text-white text-sm">${buttonTextOne}</button>
+      
+                        ${
+                          buttonTextTwo === undefined
+                            ? ""
+                            : `<button class="btn_transparent font-bold">
+                        ${buttonTextTwo}
+                      </button>`
+                        }
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="step_img_cont">
+            <img
+              src=${imageUrl}
+              alt="png image"
+            />
+          </div>
+        </div>
+      </div>`);
+    });
+    currentStepEl--
+    counterEl.innerHTML = currentStepEl;
+    currentWidth -= 20;
+    progressBar.style.width = `${currentWidth}%`
+  } else {
+    stepsData[id - 1].isCompleted = true;
+    wrapperContent.innerHTML = "";
+    stepsData.forEach((data) => {
+      const {
+        id,
+        title,
+        subText,
+        buttonTextOne,
+        buttonTextTwo,
+        imageUrl,
+        isCompleted,
+      } = data;
+  
+      return (wrapperContent.innerHTML += `<div class="step_main ${
+        currentStep === id ? "active" : ""
+      } rounded p-2_5 pb-4">
+        <div class="flex">
+          <div class="mr-auto w-2_5">
+            <div class="flex gap-3 items-stretch">
+              <div>
+                <button role="button" aria-lable="Step ${id} check button, press enter to mark step ${id} as completed" class="steps_ico check_btn p-0 cursor_pointer" onclick="completeStep(${id})">
+                  ${
+                    isCompleted
+                      ? `<svg width="27" height="27" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                  <path
+                    d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
+                    fill="#fff"
+                  ></path>
+                </svg>`
+                      : `<svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="27"
+                height="27"
+                viewBox="0 0 32 32"
+                fill="none"
+              >
+                <circle
+                  cx="16"
+                  cy="16"
+                  r="12"
+                  stroke="#00000075"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-dasharray="4 6"
+                />
+              </svg>`
+                  }
+                </button>
+              </div>
+    
+              <div>
+                <button onclick="setCurrentStep(${id})" class="text-dark step_main_head cursor_pointer text-lg font-bold">
+                  ${title}
+                </button>
+    
+                <div class="px-2_5">
+                  <div class="mt-3 step_content">
+                    <p class="text-light text-md font-medium">
+                      ${subText}
+                      <a href="" class="step_link font-bold text-lg">
+                        Learn more
+                      </a>
+                    </p>
+      
+                    <div class="mt-4">
+                      <div class="flex gap-6">
+                        <button class="btn-dark text-white text-sm">${buttonTextOne}</button>
+      
+                        ${
+                          buttonTextTwo === undefined
+                            ? ""
+                            : `<button class="btn_transparent font-bold">
+                        ${buttonTextTwo}
+                      </button>`
+                        }
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="step_img_cont">
+            <img
+              src=${imageUrl}
+              alt="png image"
+            />
+          </div>
+        </div>
+      </div>`);
+    });
+    currentStepEl++
+    counterEl.innerHTML = currentStepEl;
+    currentWidth += 20;
+    progressBar.style.width = `${currentWidth}%`;
+  }
+
+  console.log(stepsData[id - 1].isCompleted)
+}
 
 function setCurrentStep(id) {
   currentStep = id;
@@ -117,61 +333,81 @@ function setCurrentStep(id) {
 
   if (currentStep === id) {
     stepsData.forEach((data) => {
-      const { id, title, subText, buttonTextOne, buttonTextTwo, imageUrl } =
-        data;
+      const {
+        id,
+        title,
+        subText,
+        buttonTextOne,
+        buttonTextTwo,
+        imageUrl,
+        isCompleted,
+      } = data;
 
       return (wrapperContent.innerHTML += `<div class="step_main ${
         currentStep === id ? "active" : ""
-      } rounded p-3">
+      } rounded p-2_5 pb-4">
         <div class="flex">
-          <div class="mr-auto">
-            <div class="flex gap-5">
-              <div class="steps_ico cursor_pointer" onclick="completeStep(${id})">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="23"
-                  height="23"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                >
-                  <circle
-                    cx="16"
-                    cy="16"
-                    r="12"
-                    stroke="#00000075"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-dasharray="4 6"
-                  />
-                </svg>
+          <div class="mr-auto w-2_5">
+            <div class="flex gap-3 items-stretch">
+              <div>
+                <button role="button" aria-lable="Step ${id} check button, press enter to mark step ${id} as completed" class="steps_ico check_btn p-0 cursor_pointer" onclick="completeStep(${id})">
+                  ${
+                    isCompleted
+                      ? `<svg width="27" height="27" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                  <path
+                    d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
+                    fill="#fff"
+                  ></path>
+                </svg>`
+                      : `<svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="27"
+                height="27"
+                viewBox="0 0 32 32"
+                fill="none"
+              >
+                <circle
+                  cx="16"
+                  cy="16"
+                  r="12"
+                  stroke="#00000075"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-dasharray="4 6"
+                />
+              </svg>`
+                  }
+                </button>
               </div>
     
               <div>
-                <button onclick="setCurrentStep(${id})" class="text-dark step_main_head w-full cursor_pointer text-md font-bold">
+                <button onclick="setCurrentStep(${id})" class="text-dark step_main_head cursor_pointer text-lg font-bold">
                   ${title}
                 </button>
     
-                <div class="mt-3 step_content">
-                  <div class="text-light text-md step_sub_text">
-                    ${subText}
-                    <br class="lg_hidden" />
-                    <a href="" class="step_link font-medium text-base">
-                      Learn more
-                    </a>
-                  </div>
-    
-                  <div class="mt-5">
-                    <div class="flex gap-10">
-                      <button class="btn-dark">${buttonTextOne}</button>
-    
-                      ${
-                        buttonTextTwo === undefined
-                          ? ""
-                          : `<button class="btn_transparent font-bold">
-                      ${buttonTextTwo}
-                    </button>`
-                      }
+                <div class="px-2_5">
+                  <div class="mt-3 step_content">
+                    <p class="text-light text-md font-medium">
+                      ${subText}
+                      <a href="" class="step_link font-bold text-lg">
+                        Learn more
+                      </a>
+                    </p>
+      
+                    <div class="mt-4">
+                      <div class="flex gap-6">
+                        <button class="btn-dark text-white text-sm">${buttonTextOne}</button>
+      
+                        ${
+                          buttonTextTwo === undefined
+                            ? ""
+                            : `<button class="btn_transparent font-bold">
+                        ${buttonTextTwo}
+                      </button>`
+                        }
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -193,65 +429,84 @@ function setCurrentStep(id) {
   }
 }
 
-function completeStep(id) {
-  console.log(id);
-}
-
 stepsData.forEach((data) => {
-  const { id, title, subText, buttonTextOne, buttonTextTwo, imageUrl } = data;
+  const {
+    id,
+    title,
+    subText,
+    buttonTextOne,
+    buttonTextTwo,
+    imageUrl,
+    isCompleted,
+  } = data;
 
   return (wrapperContent.innerHTML += `<div class="step_main ${
     currentStep === id ? "active" : ""
-  } rounded p-3">
+  } rounded p-2_5 pb-4">
     <div class="flex">
-      <div class="mr-auto">
-        <div class="flex gap-5">
-        <div class="steps_ico cursor_pointer" onclick="completeStep(${id})">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="23"
-          height="23"
-          viewBox="0 0 32 32"
-          fill="none"
-        >
-          <circle
-            cx="16"
-            cy="16"
-            r="12"
-            stroke="#00000075"
-            stroke-width="2.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-dasharray="4 6"
-          />
-        </svg>
-      </div>
+      <div class="mr-auto w-2_5">
+        <div class="flex gap-3 items-stretch">
+          <div>
+            <button role="button" aria-lable="Step ${id} check button, press enter to mark step ${id} as completed" class="steps_ico check_btn p-0 cursor_pointer" onclick="completeStep(${id})">
+              ${
+                isCompleted
+                  ?  `<svg class="spinner" xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 28 28" fill="none">
+                  <path
+                    d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2"
+                    stroke="none"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>`
+                  : `<svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="27"
+            height="27"
+            viewBox="0 0 32 32"
+            fill="none"
+          >
+            <circle
+              cx="16"
+              cy="16"
+              r="12"
+              stroke="#00000075"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-dasharray="4 6"
+            />
+          </svg>`
+              }
+            </button>
+          </div>
 
           <div>
-            <button onclick="setCurrentStep(${id})" class="text-dark step_main_head w-full cursor_pointer text-md font-bold">
+            <button onclick="setCurrentStep(${id})" class="text-dark step_main_head cursor_pointer text-lg font-bold">
               ${title}
             </button>
 
-            <div class="mt-3 step_content">
-              <div class="text-light text-md step_sub_text">
-                ${subText}
-                <br class="lg_hidden" />
-                <a href="" class="step_link font-medium text-base">
-                  Learn more
-                </a>
-              </div>
-
-              <div class="mt-5">
-                <div class="flex gap-10">
-                  <button class="btn-dark">${buttonTextOne}</button>
-
-                  ${
-                    buttonTextTwo === undefined
-                      ? ""
-                      : `<button class="btn_transparent font-bold">
-                  ${buttonTextTwo}
-                </button>`
-                  }
+            <div class="px-2_5">
+              <div class="mt-3 step_content">
+                <p class="text-light text-md font-medium">
+                  ${subText}
+                  <a href="" class="step_link font-bold text-lg">
+                    Learn more
+                  </a>
+                </p>
+  
+                <div class="mt-4">
+                  <div class="flex gap-6">
+                    <button class="btn-dark text-white text-sm">${buttonTextOne}</button>
+  
+                    ${
+                      buttonTextTwo === undefined
+                        ? ""
+                        : `<button class="btn_transparent font-bold">
+                    ${buttonTextTwo}
+                  </button>`
+                    }
+                  </div>
                 </div>
               </div>
             </div>
@@ -269,10 +524,10 @@ stepsData.forEach((data) => {
   </div>`);
 });
 
-const formWrap = document.querySelector('.form_wrap');
-formWrap.addEventListener('submit', function (e) {
+const formWrap = document.querySelector(".form_wrap");
+formWrap.addEventListener("submit", function (e) {
   e.preventDefault();
-})
+});
 
 // screen reader logic
 // let tags = document.querySelectorAll(

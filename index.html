@@ -16,8 +16,8 @@
     <!-- navbar -->
     <nav role="navigation" class="navbar">
       <!-- brand -->
-      <div class="navbar_brand">
-        <a role="link" aria-labelledby="brandLink" href="https://shopify.com">
+      <div class="navbar_brand w-full">
+        <a  role="link" aria-labelledby="brandLink" href="https://shopify.com">
           <img
             class="lg_brand"
             src="https://crushingit.tech/hackathon-assets/shopify-icon-desktop.svg"
@@ -91,8 +91,8 @@
           id="profileBtn"
         >
           <div class="profile_wrap">
-            <div class="name_wrap">Davil Collections</div>
-            <div class="btn_name">DC</div>
+            <div class="name_wrap text-sm">Davil Collections</div>
+            <div class="btn_name text-sm">DC</div>
           </div>
         </button>
       </div>
@@ -170,7 +170,7 @@
       </menu>
 
       <!-- dropdow -->
-      <div role="menu" class="dropdown border d-none" id="main_drop">
+      <menu role="menu" class="dropdown border d-none" id="main_drop">
         <div class="drop_wrap">
           <a
             role="link"
@@ -304,25 +304,25 @@
             <span class="text-md">Log out</span>
           </a>
         </div>
-      </div>
+      </menu>
     </nav>
 
     <!-- main -->
     <main role="main">
       <div role="alert" aria-labelledby="calloutAlert" class="callout">
         <div class="flex items-center">
-          <h4 class="callout_text text-md mr-auto text-white">
+          <p class="text-sm mr-auto text-white">
             Extend your trial for $1/month for 3 months on select plan.
-          </h4>
+          </p>
 
-          <div class="flex gap-5 items-center">
+          <div class="flex gap-6 items-center">
             <div>
-              <a href="https://shopify.com/pricing">
-                <button role="button" aria-label="Press enter to go to shopify.com/pricing" class="btn-white border">Select plan</button>
+              <a role="button" aria-label="Press enter to go to shopify.com/pricing" class="btn btn-white text-sm d-block text-dark font-bold border" href="https://shopify.com/pricing">
+                Select plan
               </a>
             </div>
             <div class="cursor_pointer close_ico">
-              <button role="button" aria-label="Press enter to remove callout alert" class="btn_transparent" id="closeCalloutBtn">
+              <button role="button" aria-label="Press enter to remove callout alert" class="close_btn" id="closeCalloutBtn">
                 <svg
                   width="20"
                   height="20"
@@ -340,26 +340,27 @@
           </div>
         </div>
 
-        <div class="sr-only" aria-live="polite" id="calloutAlert">
+        <span class="sr-only" aria-live="polite" id="calloutAlert">
           Extend your trial for 1 dollar per month for 3 months on select plan.
-        </div>
+        </span>
       </div>
 
-      <div class="setup_wrap border p-3 pt-5 bg-white mt-4 rounded">
-        <div class="setup_wrap_header">
-          <div class="flex items-center">
+      <div class="setup_wrap border bg-white mt-4 rounded">
+        <div class="px-3">
+          <div  role="alert" aria-labelledby="stepGuideHeading" class="flex items-center">
             <div class="mr-auto">
-              <div class="text-dark font-bold text-lg">Setup guide</div>
-              <div class="text-md text-dark">
+              <p class="text-dark font-bold text-lg">Setup guide</p>
+              <span class="sr-only" aria-live="polite" id="stepGuideHeading">Setup guide. Use this personalized guide to get your store up and running</span>
+              <div class="text-md text-dark mt-1">
                 Use this personalized guide to get your store up and running
               </div>
             </div>
 
             <div>
-              <button class="btn_transparent" id="wrapper_btn">
+              <button role="button" aria-label="Press enter to toggle steps guide." class="btn_transparent" id="wrapper_btn">
                 <svg
-                  width="25"
-                  height="25"
+                  width="5"
+                  height="5"
                   viewBox="0 0 21 20"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -377,12 +378,15 @@
           </div>
         </div>
 
-        <div class="setup_wrap_content mt-5">
-          <div class="flex items-center gap-5">
-            <div class="text-sm">1 / 5 completed</div>
+        <div class="setup_wrap_content mt-4">
+          <div role="alert" aria-labelledby="progressBar" class="flex text-sm items-center gap-5 px-3">
+            <div><span id="counter">0</span> / 5 completed</div>
             <div class="progress">
               <div class="bar"></div>
             </div>
+
+            <span class="sr-only" aria-live="polite" id="progressBar">1 out of 5 step completed.</span>
+            <button aria-disabled="true" class="sr-only"></button>
           </div>
 
           <div class="mt-5" id="wrapperContent"></div>
