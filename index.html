@@ -64,7 +64,7 @@
       <div class="notification_profile_btn_wrap">
         <button
           role="button"
-          aria-label="Press Ctrl+N to open notifications menu"
+          aria-label="Press Ctrl+Q to toggle notifications menu"
           class="btn"
           id="notifactionBtn"
         >
@@ -86,7 +86,7 @@
 
         <button
           role="button"
-          aria-label="Press Ctrl+B to open profile menu"
+          aria-label="Press Ctrl+Z to open profile menu"
           class="btn_profile"
           id="profileBtn"
         >
@@ -106,12 +106,13 @@
       >
         <div>
           <div class="flex items-center">
-            <h4 role="heading" class="text-dark text-lg font-medium mr-auto">
+            <h4 role="alert" aria-labelledby="alertsText" class="text-dark text-lg font-medium mr-auto">
               Alerts
             </h4>
+            <span class="sr-only" aria-live="polite" id="alertsText">Notification dropdown header. Alerts</span>
 
             <div class="flex items-center gap-10">
-              <button class="btn_transparent" role="button">
+              <button role="button" aria-label="Press enter to filter notifications" class="btn_transparent" role="button">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   id="Layer_1"
@@ -126,7 +127,7 @@
                 </svg>
               </button>
 
-              <button class="btn_transparent" role="button">
+              <button role="button" aria-label="Press enter to mark all notifications" class="btn_transparent" role="button">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   version="1.1"
@@ -163,9 +164,11 @@
         </div>
 
         <div class="mt-5 p-5 text-center">
-          <p role="heading" class="font-bold text-md text-dark">
+          <p role="alert" aria-labelledby="messageText" class="font-bold text-md text-dark">
             Alerts about your store and account will show here
           </p>
+
+          <span class="sr-only" aria-live="polite" id="messageText">Alert message. Alerts about your store and account will show here</span>
         </div>
       </menu>
 
@@ -174,6 +177,7 @@
         <div class="drop_wrap">
           <a
             role="link"
+            aria-label="Profile dropdown link. Press enter to go to admin.shopify.com"
             href="https://admin.shopify.com"
             class="profile_drop_btn w-full d-block"
           >
@@ -205,7 +209,8 @@
             </div>
           </a>
 
-          <a href="https://admin.shopify.com" role="link">
+          <a href="https://admin.shopify.com"role="link"
+          aria-label="Profile dropdown link. Press enter to go to admin.shopify.com">
             <div class="flex items-center mt-1_2">
               <button class="drop_link text-dark flex items-center gap-5">
                 <div class="ico_wrap">
@@ -235,6 +240,7 @@
             href="https://admin.shopify.com"
             class="drop_link text-dark d-block"
             role="link"
+            aria-label="Profile dropdown link. Press enter to go to admin.shopify.com"
           >
             <span class="text-md">Help Center</span>
           </a>
@@ -243,6 +249,7 @@
             href="https://admin.shopify.com"
             class="drop_link text-dark d-block"
             role="link"
+            aria-label="Profile dropdown link. Press enter to go to admin.shopify.com"
           >
             <span class="text-md">Change log</span>
           </a>
@@ -251,6 +258,7 @@
             href="https://admin.shopify.com"
             class="drop_link text-dark d-block"
             role="link"
+            aria-label="Profile dropdown link. Press enter to go to admin.shopify.com"
           >
             <span class="text-md">Community forums</span>
           </a>
@@ -259,6 +267,7 @@
             href="https://admin.shopify.com"
             class="drop_link text-dark d-block"
             role="link"
+            aria-label="Profile dropdown link. Press enter to go to admin.shopify.com"
           >
             <span class="text-md">Hire a Shopify Partner</span>
           </a>
@@ -267,6 +276,7 @@
             href="https://admin.shopify.com"
             class="drop_link text-dark d-block"
             role="link"
+            aria-label="Profile dropdown link. Press enter to go to admin.shopify.com"
           >
             <span class="text-md">Keyboard shortcuts</span>
           </a>
@@ -277,6 +287,7 @@
             href="https://admin.shopify.com"
             class=" text-dark p-1 d-block"
             role="link"
+            aria-label="Profile dropdown link. Press enter to go to admin.shopify.com"
           >
             <span class="text-md d-block">
               <span class="text-dark text-md font-bold d-block"
@@ -292,6 +303,7 @@
             href="https://admin.shopify.com"
             class="drop_link text-dark d-block"
             role="link"
+            aria-label="Profile dropdown link. Press enter to go to admin.shopify.com"
           >
             <span class="text-md">Manage account</span>
           </a>
@@ -300,6 +312,7 @@
             href="https://admin.shopify.com"
             class="drop_link text-dark d-block"
             role="link"
+            aria-label="Profile dropdown link. Press enter to go to admin.shopify.com"
           >
             <span class="text-md">Log out</span>
           </a>
@@ -357,7 +370,7 @@
             </div>
 
             <div>
-              <button role="button" aria-label="Press enter to toggle steps guide." class="btn_transparent" id="wrapper_btn">
+              <button role="button" aria-label="Press enter to toggle steps guide visibility." class="btn_transparent" id="wrapper_btn">
                 <svg
                   width="5"
                   height="5"
