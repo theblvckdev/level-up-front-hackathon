@@ -126,205 +126,308 @@ counterEl.innerText = currentStepEl;
 function completeStep(id) {
   if(stepsData[id - 1].isCompleted) {
     stepsData[id - 1].isCompleted = false
-    wrapperContent.innerHTML = "";
-    stepsData.forEach((data) => {
-      const {
-        id,
-        title,
-        subText,
-        buttonTextOne,
-        buttonTextTwo,
-        imageUrl,
-        isCompleted,
-      } = data;
+    // wrapperContent.innerHTML = "";
+    // stepsData.forEach((data) => {
+    //   const {
+    //     id,
+    //     title,
+    //     subText,
+    //     buttonTextOne,
+    //     buttonTextTwo,
+    //     imageUrl,
+    //     isCompleted,
+    //   } = data;
   
-      return (wrapperContent.innerHTML += `<div class="step_main ${
-        currentStep === id ? "active" : ""
-      } rounded p-2_5 pb-4">
-        <div class="flex">
-          <div class="mr-auto w-2_5">
-            <div class="flex gap-3 items-stretch">
-              <div>
-                <button role="button" aria-lable="Step ${id} check button, press enter to mark step ${id} as completed" class="steps_ico check_btn p-0 cursor_pointer" onclick="completeStep(${id})">
-                  ${
-                    isCompleted
-                      ? `<svg width="27" height="27" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" fill="#303030"></circle>
-                  <path
-                    d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
-                    fill="#fff"
-                  ></path>
-                </svg>`
-                      : `<svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="27"
-                height="27"
-                viewBox="0 0 32 32"
-                fill="none"
-              >
-                <circle
-                  cx="16"
-                  cy="16"
-                  r="12"
-                  stroke="#00000075"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-dasharray="4 6"
-                />
-              </svg>`
-                  }
-                </button>
-              </div>
+    //   return (wrapperContent.innerHTML += `<div class="step_main ${
+    //     currentStep === id ? "active" : ""
+    //   } rounded p-2_5 pb-4">
+    //     <div class="flex">
+    //       <div class="mr-auto w-2_5">
+    //         <div class="flex gap-3 items-stretch">
+    //           <div>
+    //             <button role="button" aria-lable="Step ${id} check button, press enter to mark step ${id} as completed" class="steps_ico check_btn p-0 cursor_pointer" onclick="completeStep(${id})">
+    //               ${
+    //                 isCompleted
+    //                   ? `<svg width="27" height="27" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    //               <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+    //               <path
+    //                 d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
+    //                 fill="#fff"
+    //               ></path>
+    //             </svg>`
+    //                   : `<svg
+    //             xmlns="http://www.w3.org/2000/svg"
+    //             width="27"
+    //             height="27"
+    //             viewBox="0 0 32 32"
+    //             fill="none"
+    //           >
+    //             <circle
+    //               cx="16"
+    //               cy="16"
+    //               r="12"
+    //               stroke="#00000075"
+    //               stroke-width="2.5"
+    //               stroke-linecap="round"
+    //               stroke-linejoin="round"
+    //               stroke-dasharray="4 6"
+    //             />
+    //           </svg>`
+    //               }
+    //             </button>
+    //           </div>
     
-              <div>
-                <button onclick="setCurrentStep(${id})" class="text-dark step_main_head cursor_pointer text-lg font-bold">
-                  ${title}
-                </button>
+    //           <div>
+    //             <button onclick="setCurrentStep(${id})" class="text-dark step_main_head cursor_pointer text-lg font-bold">
+    //               ${title}
+    //             </button>
     
-                <div class="px-2_5">
-                  <div class="mt-3 step_content">
-                    <p class="text-light text-md font-medium">
-                      ${subText}
-                      <a href="" class="step_link font-bold text-lg">
-                        Learn more
-                      </a>
-                    </p>
+    //             <div class="px-2_5">
+    //               <div class="mt-3 step_content">
+    //                 <p class="text-light text-md font-medium">
+    //                   ${subText}
+    //                   <a href="" class="step_link font-bold text-lg">
+    //                     Learn more
+    //                   </a>
+    //                 </p>
       
-                    <div class="mt-4">
-                      <div class="flex gap-6">
-                        <button class="btn-dark text-white text-sm">${buttonTextOne}</button>
+    //                 <div class="mt-4">
+    //                   <div class="flex gap-6">
+    //                     <button class="btn-dark text-white text-sm">${buttonTextOne}</button>
       
-                        ${
-                          buttonTextTwo === undefined
-                            ? ""
-                            : `<button class="btn_transparent font-bold">
-                        ${buttonTextTwo}
-                      </button>`
-                        }
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    //                     ${
+    //                       buttonTextTwo === undefined
+    //                         ? ""
+    //                         : `<button class="btn_transparent font-bold">
+    //                     ${buttonTextTwo}
+    //                   </button>`
+    //                     }
+    //                   </div>
+    //                 </div>
+    //               </div>
+    //             </div>
+    //           </div>
+    //         </div>
+    //       </div>
     
-          <div class="step_img_cont">
-            <img
-              src=${imageUrl}
-              alt="png image"
-            />
-          </div>
-        </div>
-      </div>`);
-    });
+    //       <div class="step_img_cont">
+    //         <img
+    //           src=${imageUrl}
+    //           alt="png image"
+    //         />
+    //       </div>
+    //     </div>
+    //   </div>`);
+    // });
     currentStepEl--
     counterEl.innerHTML = currentStepEl;
     currentWidth -= 20;
     progressBar.style.width = `${currentWidth}%`
-  } else {
-    stepsData[id - 1].isCompleted = true;
+    currentStep = id
     wrapperContent.innerHTML = "";
-    stepsData.forEach((data) => {
-      const {
-        id,
-        title,
-        subText,
-        buttonTextOne,
-        buttonTextTwo,
-        imageUrl,
-        isCompleted,
-      } = data;
+
+    if (currentStep === id) {
+      stepsData.forEach((data) => {
+        const {
+          id,
+          title,
+          subText,
+          buttonTextOne,
+          buttonTextTwo,
+          imageUrl,
+          isCompleted,
+        } = data;
   
-      return (wrapperContent.innerHTML += `<div class="step_main ${
-        currentStep === id ? "active" : ""
-      } rounded p-2_5 pb-4">
-        <div class="flex">
-          <div class="mr-auto w-2_5">
-            <div class="flex gap-3 items-stretch">
-              <div>
-                <button role="button" aria-lable="Step ${id} check button, press enter to mark step ${id} as completed" class="steps_ico check_btn p-0 cursor_pointer" onclick="completeStep(${id})">
-                  ${
-                    isCompleted
-                      ? `<svg width="27" height="27" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" fill="#303030"></circle>
-                  <path
-                    d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
-                    fill="#fff"
-                  ></path>
+        return (wrapperContent.innerHTML += `<div class="step_main ${
+          currentStep === id ? "active" : ""
+        } rounded p-2_5 pb-4">
+          <div class="flex">
+            <div class="mr-auto w-2_5">
+              <div class="flex gap-3 items-stretch">
+                <div>
+                  <button role="button" aria-lable="Step ${id} check button, press enter to mark step ${id} as completed" class="steps_ico check_btn p-0 cursor_pointer" onclick="completeStep(${id})">
+                    ${
+                      isCompleted
+                        ? `<svg width="27" height="27" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                    <path
+                      d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
+                      fill="#fff"
+                    ></path>
+                  </svg>`
+                        : `<svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="27"
+                  height="27"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                >
+                  <circle
+                    cx="16"
+                    cy="16"
+                    r="12"
+                    stroke="#00000075"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-dasharray="4 6"
+                  />
                 </svg>`
-                      : `<svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="27"
-                height="27"
-                viewBox="0 0 32 32"
-                fill="none"
-              >
-                <circle
-                  cx="16"
-                  cy="16"
-                  r="12"
-                  stroke="#00000075"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-dasharray="4 6"
-                />
-              </svg>`
-                  }
-                </button>
-              </div>
-    
-              <div>
-                <button onclick="setCurrentStep(${id})" class="text-dark step_main_head cursor_pointer text-lg font-bold">
-                  ${title}
-                </button>
-    
-                <div class="px-2_5">
-                  <div class="mt-3 step_content">
-                    <p class="text-light text-md font-medium">
-                      ${subText}
-                      <a href="" class="step_link font-bold text-lg">
-                        Learn more
-                      </a>
-                    </p>
+                    }
+                  </button>
+                </div>
       
-                    <div class="mt-4">
-                      <div class="flex gap-6">
-                        <button class="btn-dark text-white text-sm">${buttonTextOne}</button>
+                <div>
+                  <button onclick="setCurrentStep(${id})" class="text-dark step_main_head cursor_pointer text-lg font-bold">
+                    ${title}
+                  </button>
       
-                        ${
-                          buttonTextTwo === undefined
-                            ? ""
-                            : `<button class="btn_transparent font-bold">
-                        ${buttonTextTwo}
-                      </button>`
-                        }
+                  <div class="px-2_5">
+                    <div class="mt-3 step_content">
+                      <p class="text-light text-md font-medium">
+                        ${subText}
+                        <a href="" class="step_link font-bold text-lg">
+                          Learn more
+                        </a>
+                      </p>
+        
+                      <div class="mt-4">
+                        <div class="flex gap-6">
+                          <button class="btn-dark text-white text-sm">${buttonTextOne}</button>
+        
+                          ${
+                            buttonTextTwo === undefined
+                              ? ""
+                              : `<button class="btn_transparent font-bold">
+                          ${buttonTextTwo}
+                        </button>`
+                          }
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+      
+            <div class="step_img_cont">
+              <img
+                src=${imageUrl}
+                alt="png image"
+              />
+            </div>
           </div>
-    
-          <div class="step_img_cont">
-            <img
-              src=${imageUrl}
-              alt="png image"
-            />
-          </div>
-        </div>
-      </div>`);
-    });
+        </div>`);
+      });
+    } else {
+      null;
+    }
+  } else {
+    stepsData[id - 1].isCompleted = true;
     currentStepEl++
     counterEl.innerHTML = currentStepEl;
     currentWidth += 20;
     progressBar.style.width = `${currentWidth}%`;
-  }
+    currentStep = id + 1
+    wrapperContent.innerHTML = "";
 
-  console.log(stepsData[id - 1].isCompleted)
+    if (currentStep === id + 1) {
+      stepsData.forEach((data) => {
+        const {
+          id,
+          title,
+          subText,
+          buttonTextOne,
+          buttonTextTwo,
+          imageUrl,
+          isCompleted,
+        } = data;
+  
+        return (wrapperContent.innerHTML += `<div class="step_main ${
+          currentStep === id ? "active" : ""
+        } rounded p-2_5 pb-4">
+          <div class="flex">
+            <div class="mr-auto w-2_5">
+              <div class="flex gap-3 items-stretch">
+                <div>
+                  <button role="button" aria-lable="Step ${id} check button, press enter to mark step ${id} as completed" class="steps_ico check_btn p-0 cursor_pointer" onclick="completeStep(${id})">
+                    ${
+                      isCompleted
+                        ? `<svg width="27" height="27" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                    <path
+                      d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
+                      fill="#fff"
+                    ></path>
+                  </svg>`
+                        : `<svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="27"
+                  height="27"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                >
+                  <circle
+                    cx="16"
+                    cy="16"
+                    r="12"
+                    stroke="#00000075"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-dasharray="4 6"
+                  />
+                </svg>`
+                    }
+                  </button>
+                </div>
+      
+                <div>
+                  <button onclick="setCurrentStep(${id})" class="text-dark step_main_head cursor_pointer text-lg font-bold">
+                    ${title}
+                  </button>
+      
+                  <div class="px-2_5">
+                    <div class="mt-3 step_content">
+                      <p class="text-light text-md font-medium">
+                        ${subText}
+                        <a href="" class="step_link font-bold text-lg">
+                          Learn more
+                        </a>
+                      </p>
+        
+                      <div class="mt-4">
+                        <div class="flex gap-6">
+                          <button class="btn-dark text-white text-sm">${buttonTextOne}</button>
+        
+                          ${
+                            buttonTextTwo === undefined
+                              ? ""
+                              : `<button class="btn_transparent font-bold">
+                          ${buttonTextTwo}
+                        </button>`
+                          }
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <div class="step_img_cont">
+              <img
+                src=${imageUrl}
+                alt="png image"
+              />
+            </div>
+          </div>
+        </div>`);
+      });
+    } else {
+      null;
+    }
+  }
 }
 
 function setCurrentStep(id) {

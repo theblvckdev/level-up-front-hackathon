@@ -128,6 +128,10 @@ a {
   margin-top: 8px;
 }
 
+.mt-1_2 {
+  margin-top: 3px;
+}
+
 .text-lg {
   font-size: 14px;
   line-height: 140%;
@@ -135,13 +139,17 @@ a {
 
 .drop_link {
   width: 100%;
-  padding: 8px;
+  padding: 5px;
   background-color: transparent;
   transition: 0.2s ease-in;
   border: none;
   outline: none !important;
   outline-offset: 1px;
-  border-radius: 10px;
+  border-radius: 6px;
+}
+
+.p-1 {
+  padding: 5px;
 }
 
 .drop_link.no_ico {
@@ -151,6 +159,10 @@ a {
 .p-3 {
   padding: 8px;
   text-align: left;
+}
+
+.p-4 {
+  padding: 10px;
 }
 
 .p-0 {
@@ -193,7 +205,7 @@ a {
 
 .profile_drop_btn {
   width: 100%;
-  padding: 5px;
+  padding: 0px;
   background-color: #e3e3e363;
   border-radius: 8px;
 }
@@ -456,7 +468,7 @@ a {
 }
 
 .step_main .btn_transparent:focus {
-  box-shadow: 0px 0px 0px 2px #005bd3;
+  box-shadow: 0px 0px 0px 0px #005bd3 !important;
   background-color: #ffffff;
 }
 
@@ -493,7 +505,15 @@ main {
 
 
 #notifaction_drop {
-  width: 430px !important;
+  width: 400px !important;
+}
+
+#notifaction_drop .btn_transparent {
+  background-color: transparent !important;
+}
+
+#notifaction_drop .p-5 {
+  background-color: #f1f1f1;
 }
 
 .progress {
@@ -502,6 +522,7 @@ main {
   height: 5px;
   border-radius: 50px;
   background-color: #f1f1f1;
+  overflow: hidden;
 }
 
 .bar {
@@ -530,6 +551,10 @@ main {
 
 .text-light {
   color: var(--grey-100);
+}
+
+.text-center {
+  text-align: center;
 }
 
 .gap-10 {
